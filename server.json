@@ -1,18 +1,21 @@
 {
     "name": "Nest",
-    "docs": "https://www.nest.com",
+    "docs": "https://github.com/Einstein42/udi-nest-poly",
     "type": "python",
-    "executable": "polynest.py",
-    "description": "Add Nest control to the ISY994.",
-    "notice": "\"Nest\" is trademarked., see http://www.nest.com for more information. This Node Server is neither developed by nor endorsed by Nest.",
+    "executable": "nest-poly.py",
+    "install": "install.sh",
+    "description": "Nest Thermostat Control for the ISY",
+    "notice": "\"Nest\" is trademarked, see http://www.nest.com for more information. This Node Server is neither developed nor endorsed by Nest or Google.",
+    "shortPoll": "5",
+    "longPoll": "30",
     "credits": [
         {
-            "title": "nest: A Python library for Nest",
+            "title": "udi-nest-poly: A Polyglot v2 interface for Nest",
             "author": "James Milne (Einstein.42)",
-            "version": "0.2.3",
-            "date": "July 2nd, 2016",
-            "source": "https://github.com/Einstein42/nest-polyglot",
-            "license": "https://github.com/Einstein42/nest-polyglot/blob/master/LICENSE"
+            "version": "2.0.0",
+            "date": "December 14th, 2017",
+            "source": "https://github.com/Einstein42/udi-nest-poly",
+            "license": "https://raw.githubusercontent.com/Einstein42/udi-nest-poly/master/LICENSE"
         }
     ]
 }

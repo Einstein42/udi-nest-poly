@@ -1,38 +1,18 @@
 <nodeDefs>
-    <!-- Nest Control -->
-    <nodeDef id="nestcontrol" nls="nctl" nodeType="143">
-        <editors />
-        <sts />
-        <cmds>
-            <sends />
-            <accepts>
-			    <cmd id="DISCOVER" />
-		    </accepts>
-        </cmds>
-    </nodeDef>
-	<!-- Nest Thermostat -->
-    <nodeDef id="nestdevice" nls="ndev" nodeType="143">
+    <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
+    <!-- controller -->
+    <nodeDef id="controller" nls="ctl">
         <editors />
         <sts>
-            <st id="ST" editor="nmode" />
-			<st id="GV1" editor="ntemp" />
-            <st id="GV2" editor="ntemp" />
-			<st id="GV3" editor="ntemp" />
-			<st id="GV4" editor="nstatus" />
-        </sts>
+			<st id="ST" editor="bool" />
+		</sts>
         <cmds>
             <sends />
             <accepts>
-                <cmd id="TEMP">
-                    <p id="" editor="ntemp" optional="T" init="GV3" />
-                </cmd	>
-                <cmd id="MODE">
-                    <p id="" editor="nmode" optional="T" init="ST" />
-				</cmd>	
+                <cmd id="DISCOVER" />
             </accepts>
         </cmds>
     </nodeDef>
-	<!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
    <nodeDef id="nestthermostat" nodeType="143" nls="143" eventMap="I_STD">
       <!-- sts optional="true" - indicates that some of these may not ever be used for the thermostat -->
       <sts>
@@ -43,7 +23,6 @@
          <st id="CLIFS" editor="I_TSTAT_FAN_MODE" />
          <st id="CLIHUM" editor="I_TSTAT_HUM" />
          <st id="CLIHCS" editor="I_TSTAT_HCS" />
-         <st id="GV2" editor="I_TEMP_DEG" />
 		 <st id="GV4" editor="nstatus" />		 
       </sts>
       <cmds>

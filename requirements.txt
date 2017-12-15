@@ -1,0 +1,2 @@
+python-nest>3.0
+polyinterface>=2.0.0

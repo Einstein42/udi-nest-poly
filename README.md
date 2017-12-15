@@ -1,34 +1,27 @@
-# nest-polyglot
-This is the Nest Poly for the ISY Polyglot interface.  
+# Nest NodeServer for Polyglot v2
+
 (c) Einstein.42 aka James Milne.  
-MIT license. 
+MIT license.
 
-#Requirements
-`sudo pip install python-nest==2.11.0`
+### Requirements
 
-Install:
+Install via the NodeServer Store or clone the repository and run the install.sh script.
 
-1. Go to your polyglot/config/node_servers/ folder.
-  * `git clone https://github.com/Einstein42/nest-polyglot.git`
-  * `cd nest-polyglot`
-2. Add your username and password to a new file called login.py
-  * `echo USERNAME='"<username>"' >> login.py`
-  * `echo PASSWORD='"<password>"' >> login.py`
-3. Restart Polyglot and add the Nest nodeserver via web interface If you have the Polyglot systemctl script installed do this:
-  * `sudo systemctl restart polyglot`
-4. Download the profile from the Nest Polyglot configuration page and copy baseURL
-5. Add as NodeServer in ISY. Profile Number MUST MATCH what you put in Polyglot
-6. Upload profile you download from Polyglot to ISY
-7. Reboot ISY
-8. Upload Profile again in the node server (quirk of ISY)
-9. Reboot ISY again (quirk of ISY)
-10. Once ISY is back up, go to Polyglot and restart the Nest nodeserver.
-11. All Thermostats will be automatically added as 'Nest <Structure> <Location>'
-12. Write programs and enjoy.
+#### Install Guide
 
+The Nest NodeServer now uses the official API from Nest/Google. So it was moved to a Oauth2/token
+authentication mechanism.
 
-I built this on ISY version 5.0.2 and the polyglot unstable-release version 0.0.1 from 
-https://github.com/UniversalDevicesInc/Polyglot
+When you run it the first time, check the log from Dashboard > Nest NodeServer > Details > Log and go to the URL that is provided. This will request that you allow '3C Solutions' access to your Nest data. It's just giving access to your running NodeServer. No one else will have access to any data what-so-ever.
+
+Once you click accept and login, you will get a PIN number. That PIN number then needs to be added to the Custom Parameters section of the NodeServer in the Polyglot Frontend under Dashboard > Nest NodeServer > Details > Custom Parameters. Creat a key name 'pin' and paste the PIN provided to the value field. Hit save, then restart the NodeServer.
+
+Once the NodeServer is restarted, your Thermostats will pop into ISY and away you go. Please pay attention to the notes section below.
+
+I plan on implementing the new REST streaming mechanism that Nest uses for reads at some point as well, but for now this should work well.
+
+The External Temperature API was deprecated and is no longer supported by Nest, so I had to remove it.
+
 
 # Notes
 The Nest Polyglot polls the Nest API every 30 seconds due to Nest anti-flooding mechanisms that
