@@ -22,6 +22,10 @@ I plan on implementing the new REST streaming mechanism that Nest uses for reads
 
 The External Temperature API was deprecated and is no longer supported by Nest, so I had to remove it.
 
+[See Here for the UDI Forum](https://forum.universal-devices.com/topic/23143-polyglot-v2-nest-nodeserver/)
+
+[And here for a Visual Walkthrough](https://imgur.com/a/IUWfV)
+
 
 # Notes
 The Nest Polyglot polls the Nest API every 30 seconds due to Nest anti-flooding mechanisms that
