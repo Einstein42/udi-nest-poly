@@ -67,7 +67,7 @@ class Controller(polyinterface.Controller):
             LOGGER.info('Structure found: {}'.format(structure.name))
             for device in structure.thermostats:
                 LOGGER.info('Found Thermostat: {} with Serial Number: {}'.format(device.name, device.serial))
-                address = device.serial[-10:].lower()
+                address = device.serial[:14].replace('-', '').replace('_', '').lower()
                 if address not in self.nodes:
                     self.addNode(Thermostat(self, self.address, address, device.name, device))
                 else:
