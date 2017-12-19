@@ -1,10 +1,10 @@
 <nodeDefs>
 <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
   <!-- controller -->
-  <nodeDef id="NESTCTLR" nls="NEST">
+  <nodeDef id="controller" nls="ctl">
     <editors />
     <sts>
-      <st id="ST" editor="BOOL" />
+      <st id="ST" editor="bool" />
     </sts>
     <cmds>
       <sends />
@@ -14,7 +14,7 @@
     </cmds>
   </nodeDef>
 
-  <nodeDef id="nestthermostat" nls="THERM">
+  <nodeDef id="nestthermostat" nls="therm">
     <editors />
     <sts>
       <st id="ST" editor="I_TEMP_DEG" />
@@ -24,7 +24,7 @@
       <st id="CLIFS" editor="I_TSTAT_FAN_MODE" />
       <st id="CLIHUM" editor="I_TSTAT_HUM" />
       <st id="CLIHCS" editor="I_TSTAT_HCS" />
-      <st id="GV4" editor="BOOL" />
+      <st id="GV4" editor="bool" />
     </sts>
     <cmds>
       <sends />
