@@ -1,23 +1,23 @@
 # Nest Controller
 ND-controller-NAME = Nest Controller
 ND-controller-ICON = Thermostat
-CMD-ctl-DISCOVER-NAME = Re-Discover
-ST-ctl-ST-NAME = NodeServer Online
+CMD-nestctl-DISCOVER-NAME = Re-Discover
+ST-nestctl-ST-NAME = NodeServer Online
 
 # Nest Thermostat
 ND-nestthermostat-NAME = Nest Thermostat
 ND-nestthermostat-ICON = Thermostat
-PGM-CMD-143-BRT-FMT = //${c} 1\u00B0/${c} ${v}/
-PGM-CMD-143-DIM-FMT = //${c} 1\u00B0/${c} ${v}/
-ST-143-ST-NAME = Temperature
-ST-143-CLISPH-NAME = Heat SetPoint
-ST-143-CLISPC-NAME = Cool SetPoint
-ST-143-CLIMD-NAME = Mode
-ST-143-CLIFS-NAME = Fan Mode
-ST-143-CLIHUM-NAME = Humidity
-ST-143-CLIHCS-NAME = Heat/Cool State
-ST-143-GV4-NAME = Online
-CMD-143-BRT-NAME = Setpoint Up
-CMD-143-DIM-NAME = Setpoint Down
-CMD-143-QUERY-NAME = Query
-CMD-143-BEEP-NAME = Beep
+# PGM-CMD-143-BRT-FMT = //${c} 1\u00B0/${c} ${v}/
+# PGM-CMD-143-DIM-FMT = //${c} 1\u00B0/${c} ${v}/
+ST-therm-ST-NAME = Temperature
+ST-therm-CLISPH-NAME = Heat SetPoint
+ST-therm-CLISPC-NAME = Cool SetPoint
+ST-therm-CLIMD-NAME = Mode
+ST-therm-CLIFS-NAME = Fan Mode
+ST-therm-CLIHUM-NAME = Humidity
+ST-therm-CLIHCS-NAME = Heat/Cool State
+ST-therm-GV4-NAME = Online
+CMD-therm-BRT-NAME = Setpoint Up
+CMD-therm-DIM-NAME = Setpoint Down
+CMD-therm-QUERY-NAME = Query
+CMD-therm-BEEP-NAME = Beep
