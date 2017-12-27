@@ -137,8 +137,10 @@ class Thermostat(polyinterface.Node):
                     self.targethigh = self.targetlow
                 self.setDriver('CLISPC', self.targethigh)
                 self.setDriver('CLISPH', self.targetlow)
-        except (requests.exceptions.HTTPError, nest.APIError) as e:
+        except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat update Caught exception: %s', e)
+        except:
+            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
 
     def query(self, command = None):
         self.update()
@@ -170,8 +172,10 @@ class Thermostat(polyinterface.Node):
                     self.device.mode = newstate
                 self.setDriver('CLIMD', int(val))
                 #self.update_info()
-        except (requests.exceptions.HTTPError, nest.APIError) as e:
+        except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat _setmode Caught exception: %s', e)
+        except:
+            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
 
     def _setfan(self, command):
         try:
@@ -184,8 +188,10 @@ class Thermostat(polyinterface.Node):
                     self.device.fan = False
                     LOGGER.info('Got Set Fan command. Setting fan to \'Auto\'')
                 self.setDriver('CLIFS', val)
-        except (requests.exceptions.HTTPError, nest.APIError) as e:
+        except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat SetFan Caught exception: %s', e)
+        except:
+            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
 
     def _sethigh(self, command):
         inc = False
@@ -196,7 +202,6 @@ class Thermostat(polyinterface.Node):
             inc = True
         try:
             if self._checkconnect():
-                LOGGER.debug(self.device.mode)
                 if self.device.mode == 'heat-cool':
                     if not inc:
                         #self.device.temperature = (device.target[0], nest_utils.f_to_c(val))
@@ -215,8 +220,10 @@ class Thermostat(polyinterface.Node):
                         self.device.temperature = val
                     LOGGER.info("Setting temperature to {}".format(val))
                 self.setDriver('CLISPC', val)
-        except (requests.exceptions.HTTPError, nest.APIError) as e:
+        except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat _settemp Caught exception: %s', e)
+        except:
+            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
 
     def _setlow(self, command):
         inc = False
@@ -243,8 +250,10 @@ class Thermostat(polyinterface.Node):
                         self.device.temperature = val
                     LOGGER.info("Setting temperature to {}".format(val))
                 self.setDriver('CLISPH', val)
-        except (requests.exceptions.HTTPError, nest.APIError) as e:
+        except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat _settemp Caught exception: %s', e)
+        except:
+            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
 
     def _beep(self, command):
         LOGGER.info('Beep boop.')
