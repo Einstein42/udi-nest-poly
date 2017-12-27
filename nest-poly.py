@@ -140,7 +140,7 @@ class Thermostat(polyinterface.Node):
         except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat update Caught exception: %s', e)
         except:
-            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
+            LOGGER.error('update Unexpected error: '.format(sys.exc_info()[0]))
 
     def query(self, command = None):
         self.update()
@@ -175,7 +175,7 @@ class Thermostat(polyinterface.Node):
         except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat _setmode Caught exception: %s', e)
         except:
-            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
+            LOGGER.error('_setmode Unexpected error: '.format(sys.exc_info()[0]))
 
     def _setfan(self, command):
         try:
@@ -191,7 +191,7 @@ class Thermostat(polyinterface.Node):
         except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat SetFan Caught exception: %s', e)
         except:
-            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
+            LOGGER.error('_setfan Unexpected error: '.format(sys.exc_info()[0]))
 
     def _sethigh(self, command):
         inc = False
@@ -223,7 +223,7 @@ class Thermostat(polyinterface.Node):
         except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat _settemp Caught exception: %s', e)
         except:
-            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
+            LOGGER.error('_sethigh Unexpected error: '.format(sys.exc_info()[0]))
 
     def _setlow(self, command):
         inc = False
@@ -253,7 +253,7 @@ class Thermostat(polyinterface.Node):
         except (requests.exceptions.HTTPError) as e:
             LOGGER.error('NestThermostat _settemp Caught exception: %s', e)
         except:
-            LOGGER.error('Unexpected error: '.format(sys.exc_info()[0]))
+            LOGGER.error('_setlow Unexpected error: '.format(sys.exc_info()[0]))
 
     def _beep(self, command):
         LOGGER.info('Beep boop.')
