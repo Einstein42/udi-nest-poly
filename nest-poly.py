@@ -197,7 +197,7 @@ class Thermostat(polyinterface.Node):
         inc = False
         val = None
         try:
-            val = int(command.get('value'))
+            val = int(float(command.get('value')))
         except TypeError:
             inc = True
         try:
@@ -229,7 +229,7 @@ class Thermostat(polyinterface.Node):
         inc = False
         val = None
         try:
-            val = int(command.get('value'))
+            val = int(float(command.get('value')))
         except TypeError:
             inc = True
         try:
